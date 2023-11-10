@@ -3,7 +3,6 @@ import {
   createProduct,
   getProducts,
   getProductsById,
-  createProduct,
 } from '../controllers/productController.js';
 import { protect, admin } from '../middleware/authMiddleware.js';
 
