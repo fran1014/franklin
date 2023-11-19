@@ -35,7 +35,27 @@ const OrderListScreen = () => {
                 <td> {order.user && order.user.name} </td>
                 <td> {order.createdAt.substring(0, 10)} </td>
                 <td> ${order.totalPrice} </td>
-                <td></td>
+                <td>
+                  {order.isPaid ? (
+                    order.paidAt.substring(0, 10)
+                  ) : (
+                    <FaTimes style={{ color: 'red' }} />
+                  )}
+                </td>
+                <td>
+                  {order.isDelivered ? (
+                    order.deliveredAt.substring(0, 10)
+                  ) : (
+                    <FaTimes style={{ color: 'red' }} />
+                  )}
+                </td>
+                <td>
+                  <LinkContainer to={`/oder/${order._id}`}>
+                    <Button value="light" className="btn-sm">
+                      Details
+                    </Button>
+                  </LinkContainer>
+                </td>
               </tr>
             ))}
           </tbody>
